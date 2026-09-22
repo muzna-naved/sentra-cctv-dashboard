@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SENTRA - Video Search</title>
+  <link rel="stylesheet" href="video-search.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="brand-text">
+          <h2>SENTRA</h2>
+          <span>AI-Powered Security Operations</span>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#" class="nav-item">
+          <i class="fa-solid fa-house"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="fa-solid fa-briefcase"></i>
+          <span>Investigations</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="fa-solid fa-video"></i>
+          <span>CCTV Events</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="fa-solid fa-bell"></i>
+          <span>Alerts</span>
+          <span class="badge badge-red">5</span>
+        </a>
+        <a href="#" class="nav-item active">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Video Search</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="fa-solid fa-timeline"></i>
+          <span>Event Timeline</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="fa-solid fa-file-lines"></i>
+          <span>Reports</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="system-status-card">
+        <div class="status-indicator">
+          <span class="dot green"></span>
+          <span class="status-text">Connected to Database</span>
+        </div>
+        <div class="server-info">Local Server</div>
+        <div class="version-info">v1.8.0</div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- Top Header -->
+      <header class="top-header">
+        <div class="search-bar-container">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" placeholder="Search events, people, vehicles, objects....">
+        </div>
+        <div class="user-profile">
+          <div class="user-avatar">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="user-info">
+            <span class="user-name">Ahsan Raza</span>
+            <span class="user-role">Investigator</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Frame Content: Video Search -->
+      <section class="page-container">
+        <div class="page-header">
+          <h1 class="page-title">Video Search</h1>
+          <p class="page-subtitle">Find specific footage by time, camera or object</p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-card">
+          <div class="filter-group">
+            <label for="search-date">Date</label>
+            <input type="date" id="search-date" class="form-input" value="2025-04-27">
+          </div>
+
+          <div class="filter-group">
+            <label for="search-time">Time Range</label>
+            <select id="search-time" class="form-select">
+              <option value="all">12:00 AM - 11:59 PM</option>
+              <option value="night">12:00 AM - 06:00 AM</option>
+              <option value="day">06:00 AM - 06:00 PM</option>
+              <option value="evening">06:00 PM - 11:59 PM</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="search-camera">Camera</label>
+            <select id="search-camera" class="form-select">
+              <option value="ALL">All Cameras</option>
+              <option value="Camera 01">Camera 01</option>
+              <option value="Camera 02">Camera 02</option>
+              <option value="Camera 03">Camera 03</option>
+              <option value="Camera 04">Camera 04</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="search-object">Object</label>
+            <select id="search-object" class="form-select">
+              <option value="ALL">Person / Vehicle / ...</option>
+              <option value="Person">Person</option>
+              <option value="Vehicle">Vehicle</option>
+              <option value="Motorcycle">Motorcycle</option>
+            </select>
+          </div>
+
+          <div class="filter-actions">
+            <button id="btn-video-search" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+          </div>
+        </div>
+
+        <!-- Split Search Content Area -->
+        <div class="search-layout">
+          
+          <!-- Left: Search Results List -->
+          <div class="results-panel">
+            <div class="results-header">
+              <h3 id="results-count-title">Search Results (12)</h3>
+            </div>
+            <div class="results-list" id="results-list-container">
+              <!-- Rendered dynamically by JavaScript -->
+            </div>
+          </div>
+
+          <!-- Right: Video Player & Controls -->
+          <div class="player-panel">
+            <div class="player-header">
+              <span id="player-timestamp" class="timestamp-label">2025-04-27 04:18:19</span>
+              <div class="player-actions">
+                <i class="fa-solid fa-expand icon-btn"></i>
+              </div>
+            </div>
+
+            <!-- Video Frame Container -->
+            <div class="video-display">
+              <div class="cctv-placeholder">
+                <i class="fa-solid fa-video cctv-bg-icon"></i>
+                <span id="camera-title-overlay" class="cctv-overlay-text">Camera 01 - Live CCTV Feed</span>
+              </div>
+              
+              <!-- Bounding Box Overlays -->
+              <div class="box-overlay person-box">
+                <span class="box-tag green-tag">Person #1</span>
+              </div>
+              <div class="box-overlay motorcycle-box">
+                <span class="box-tag blue-tag">Motorcycle #24</span>
+              </div>
+              <div class="box-overlay car-box">
+                <span class="box-tag purple-tag">Car #12</span>
+              </div>
+            </div>
+
+            <!-- Mock Playback Controls -->
+            <div class="player-controls">
+              <button id="btn-play-pause" class="control-btn"><i class="fa-solid fa-play"></i></button>
+              <button class="control-btn"><i class="fa-solid fa-pause"></i></button>
+              
+              <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="progress-fill" style="width: 43%;"></div>
+              </div>
+              
+              <span class="time-display" id="time-display-label">04:18 / 10:00</span>
+              
+              <button class="control-btn"><i class="fa-solid fa-volume-high"></i></button>
+              <button class="control-btn"><i class="fa-solid fa-download"></i></button>
+              <button class="control-btn"><i class="fa-solid fa-expand"></i></button>
+            </div>
+
+            <!-- Jump To Time Footer -->
+            <div class="jump-time-card">
+              <label for="jump-time-input">Jump to Time:</label>
+              <input type="text" id="jump-time-input" class="form-input jump-input" value="04:18:19">
+              <button id="btn-jump-go" class="btn btn-primary">Go</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="video-search.js"></script>
+</body>
+</html>
