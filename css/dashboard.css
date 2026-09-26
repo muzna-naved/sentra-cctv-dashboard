@@ -1,0 +1,869 @@
+/* logo */
+
+.logo-mark {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background: #102342;
+    border: 1px solid #315a91;
+    color: #39d98a;
+    font-size: 18px;
+    box-shadow: 0 0 8px rgba(57, 217, 138, 0.18);
+}
+
+.logo-mark i {
+    color: #39d98a;
+}
+
+
+/* =========================================
+   TOP SEARCH BAR
+   ========================================= */
+
+.global-topbar .topbar-search {
+    width: 325px;
+    max-width: 325px;
+    height: 36px;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 11px;
+    background: #080f2c;
+    border: 1px solid #343da3;
+    border-radius: 7px;
+    color: #d8def7;
+    box-shadow: 0 0 8px rgba(53, 61, 163, 0.12);
+}
+
+.global-topbar .topbar-search>i {
+    flex-shrink: 0;
+    margin-right: 9px;
+    color: #dce3ff;
+    font-size: 14px;
+}
+
+.global-topbar .topbar-search input {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    color: #e9edff;
+    font-size: 11px;
+}
+
+.global-topbar .topbar-search input::placeholder {
+    color: #8994bd;
+    opacity: 1;
+}
+
+.global-topbar .topbar-search:focus-within {
+    border-color: #5962d1;
+    box-shadow: 0 0 10px rgba(67, 78, 210, 0.18);
+}
+
+.user-chip {
+    cursor: pointer;
+}
+
+.user-caret {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-left: 2px;
+}
+
+
+/* ---- Sidebar footer ---- */
+
+.sidebar-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.sidebar-footer .status-pill {
+    align-items: flex-start;
+    font-size: 11px;
+}
+
+.sidebar-motto {
+    font-size: 11px;
+    font-style: italic;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+
+/* ---- Page heading row ---- */
+
+.page-heading-row {
+    margin-bottom: var(--space-lg);
+    align-items: flex-start;
+}
+
+.page-heading-row .page-title,
+.page-heading-row .page-subtitle {
+    margin-top: 0;
+}
+
+.page-heading-row .page-subtitle {
+    margin-bottom: 0;
+}
+
+.page-heading-row .datetime {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+
+/* ---- Stat cards with icon circle ---- */
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.stat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.icon-blue {
+    background: #1a63e0;
+}
+
+.icon-red {
+    background: var(--color-red);
+}
+
+.card-value {
+    font-size: 22px;
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-xs);
+}
+
+.stat-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+
+/* ---- Overview grid: chart | recent events | feed | actions ---- */
+
+
+/* ---- Main 4-column dashboard layout ---- */
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(0, 1.55fr) minmax(0, 1fr) minmax(0, 0.75fr);
+    gap: var(--space-md);
+    align-items: stretch;
+}
+
+.overview-grid>* {
+    min-width: 0;
+}
+
+@media (max-width: 1200px) {
+    .overview-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .overview-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ---- Bar chart ---- */
+
+.chart-legend {
+    display: flex;
+    gap: var(--space-md);
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-sm);
+}
+
+.chart-legend span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.bar-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-sm);
+    height: 180px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--space-xs);
+}
+
+.bar-group {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+    height: 100%;
+}
+
+.bar {
+    width: 12px;
+    border-radius: 4px 4px 0 0;
+}
+
+.bar-total {
+    background: var(--accent-blue);
+}
+
+.bar-relevant {
+    background: var(--color-green);
+}
+
+.bar-labels {
+    display: flex;
+    gap: var(--space-sm);
+    margin-top: var(--space-xs);
+}
+
+.bar-labels span {
+    flex: 1;
+    text-align: center;
+    font-size: 10px;
+    color: var(--text-muted);
+}
+
+
+/* =========================================
+   RECENT EVENTS
+   ========================================= */
+
+
+/* ---- Recent Events table ---- */
+
+.recent-events-panel {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.recent-events-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+
+/* Column widths */
+
+.recent-events-table th,
+.recent-events-table td {
+    padding: 8px 1px;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 1.25;
+}
+
+
+/* Allow event names to wrap instead of overlapping */
+
+.recent-events-table td:nth-child(2) {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+
+/* Keep camera names together */
+
+.recent-events-table td:nth-child(3) {
+    white-space: normal;
+}
+
+
+/* Keep status badge inside its column */
+
+.recent-events-table td:nth-child(4) {
+    white-space: nowrap;
+}
+
+
+/* ---- Latest CCTV feed: thumbnail + bounding boxes + controls ---- */
+
+.feed-thumb {
+    position: relative;
+    width: 100%;
+    height: 235px;
+    border-radius: var(--radius-sm);
+    background: #050b18;
+    margin-bottom: var(--space-sm);
+    overflow: hidden;
+}
+
+.feed-thumb video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.feed-timestamp {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 10px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 3px 6px;
+    border-radius: 4px;
+    z-index: 5;
+}
+
+.feed-caption {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+
+/* Detection bounding boxes (decorative, positioned in % of the frame) */
+
+.bbox {
+    position: absolute;
+    border: 2px solid;
+    border-radius: 3px;
+    z-index: 3;
+}
+
+.bbox-green {
+    border-color: var(--color-green);
+}
+
+.bbox-blue {
+    border-color: var(--accent-blue);
+}
+
+.bbox-purple {
+    border-color: var(--color-purple);
+}
+
+.bbox-label {
+    position: absolute;
+    top: -18px;
+    left: -2px;
+    font-size: 9px;
+    font-weight: 700;
+    color: #fff;
+    padding: 1px 5px;
+    border-radius: 3px;
+    white-space: nowrap;
+    z-index: 4;
+}
+
+.bbox-label-green {
+    background: var(--color-green);
+}
+
+.bbox-label-blue {
+    background: var(--accent-blue);
+}
+
+.bbox-label-purple {
+    background: var(--color-purple);
+}
+
+
+/* Video control bar at the bottom of the feed thumbnail */
+
+.feed-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 8px;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.feed-control-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 11px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.feed-timestamp {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 10px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 3px 6px;
+    border-radius: 4px;
+    z-index: 5;
+}
+
+.feed-time {
+    font-size: 9px;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.feed-progress {
+    flex: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.feed-progress-fill {
+    width: 55%;
+    height: 100%;
+    background: var(--accent-blue);
+}
+
+.feed-control-icon {
+    font-size: 10px;
+    color: #fff;
+}
+
+.feed-thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-sm);
+    background: #0b1220;
+    margin-bottom: 8px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.cctv-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 0;
+}
+
+.feed-caption {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+    margin-bottom: 0;
+}
+
+
+/* ---- Quick Actions card ---- */
+
+.quick-actions-panel {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.quick-actions-panel .panel-title {
+    margin-bottom: 12px;
+}
+
+.quick-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+}
+
+.quick-action-btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 8px 12px;
+    background: #25258c;
+    border: 1px solid #514cff;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.quick-action-btn:hover {
+    background: #3030a5;
+    border-color: #6b67ff;
+}
+
+.quick-action-btn:active {
+    transform: scale(0.98);
+}
+
+.quick-action-icon {
+    width: 18px;
+    min-width: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+
+/* ---- Font Awesome icons ---- */
+
+.nav-icon,
+.quick-action-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-icon {
+    width: 22px;
+    min-width: 22px;
+    font-size: 16px;
+}
+
+.stat-icon i {
+    font-size: 19px;
+}
+
+.topbar-search>i {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.notification i {
+    font-size: 17px;
+}
+
+.quick-action-icon i {
+    font-size: 13px;
+}
+
+
+/* =========================================
+   CONNECTED TO DATABASE
+   ========================================= */
+
+.sidebar-footer .status-pill {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 11px 12px;
+    background: #0b1530;
+    border: 1px solid #26386d;
+    border-radius: 9px;
+    color: #dce5ff;
+    font-size: 11px;
+}
+
+.sidebar-footer .status-pill>div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.sidebar-footer .status-pill p {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.sidebar-footer .status-pill p:first-child {
+    color: #dce5ff;
+    font-size: 11px;
+}
+
+.sidebar-footer .status-pill .text-muted {
+    color: #7184b5;
+    font-size: 10px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    margin-top: 3px;
+    border-radius: 50%;
+    background: #22d67a;
+    box-shadow: 0 0 0 3px rgba(34, 214, 122, 0.10), 0 0 8px rgba(34, 214, 122, 0.55);
+}
+
+.sidebar-motto {
+    margin-top: 0;
+    color: #6679a8;
+    font-size: 10px;
+    text-align: center;
+}
+
+
+/* =========================================
+   EQUAL HEIGHT OVERVIEW PANELS
+   ========================================= */
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.9fr) minmax(0, 1fr) minmax(0, 0.75fr);
+    gap: 12px;
+    align-items: stretch;
+    width: 100%;
+}
+
+.overview-grid>* {
+    min-width: 0;
+}
+
+.overview-grid .card,
+.overview-grid .panel {
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.recent-events-table th:nth-child(1),
+.recent-events-table td:nth-child(1) {
+    width: 20%;
+    white-space: nowrap;
+    font-size: 10px;
+}
+
+.recent-events-table th:nth-child(2),
+.recent-events-table td:nth-child(2) {
+    width: 36%;
+    font-size: 10px;
+}
+
+.recent-events-table th:nth-child(3),
+.recent-events-table td:nth-child(3) {
+    width: 20%;
+    font-size: 10px;
+}
+
+.recent-events-table th:nth-child(4),
+.recent-events-table td:nth-child(4) {
+    width: 20%;
+}
+
+
+/* ---- Latest CCTV Feed ---- */
+
+.cctv-feed-panel {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.cctv-feed-panel .panel-title {
+    margin-bottom: 8px;
+}
+
+.cctv-feed-panel .feed-caption {
+    margin-top: 6px;
+    font-size: 11px;
+}
+
+
+/* =========================================
+   RECENT EVENTS + CCTV FINAL ALIGNMENT
+   ========================================= */
+
+.recent-events-panel,
+.cctv-feed-panel {
+    height: 312px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.recent-events-panel .panel-title,
+.cctv-feed-panel .panel-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   TOPBAR NOTIFICATION + USER PROFILE
+========================================================= */
+
+
+/* ---------- Notification bell ---------- */
+
+.topbar-right .icon-btn {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    color: #dce5ff;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.topbar-right .icon-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.topbar-right .icon-btn>i {
+    font-size: 20px;
+    color: #e8edff;
+}
+
+
+/* ---------- Notification number ---------- */
+
+.topbar-right .icon-btn-badge {
+    position: absolute;
+    top: 1px;
+    right: 0px;
+    width: 17px;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #ff304f;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1;
+    border: 2px solid #0a1225;
+}
+
+
+/* ---------- User profile ---------- */
+
+.topbar-right .user-chip {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+}
+
+
+/* Profile circle */
+
+.topbar-right .user-avatar {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #cbd2e8;
+    color: #3b4665;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    overflow: hidden;
+}
+
+
+/* User icon */
+
+.topbar-right .user-avatar i {
+    font-size: 20px;
+    color: #4a5575;
+}
+
+
+/* Name + role container */
+
+.topbar-right .user-chip>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 75px;
+}
+
+
+/* User name */
+
+.topbar-right .user-name {
+    margin: 0;
+    color: #f5f7ff;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+
+/* User role */
+
+.topbar-right .user-role {
+    margin: 0;
+    color: #8794b8;
+    font-size: 10px;
+    line-height: 14px;
+}
+
+
+/* ---------- Dropdown arrow ---------- */
+
+.topbar-right .user-caret {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 3px;
+    color: #8e9bd0;
+    font-size: 11px;
+}
+
+.topbar-right .user-caret i {
+    font-size: 11px;
+}
+
+
+/* ---------- Overall topbar spacing ---------- */
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.recent-events-panel {
+    padding-left: 10px;
+    padding-right: 10px;
+}

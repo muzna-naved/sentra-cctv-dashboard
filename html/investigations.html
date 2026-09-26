@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SENTRA — Investigations</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/investigations.css" />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body data-page="investigations">
+    <div id="page-content">
+
+        <!-- ============ MAIN CONTENT ============ -->
+        <main class="main-content">
+            <!-- Page heading + New Investigation button -->
+            <div class="flex justify-between items-center page-heading-row">
+                <div>
+                    <h1 class="page-title">Investigations</h1>
+                    <p class="page-subtitle">Search, review and manage investigation cases</p>
+                </div>
+                <button class="btn btn-primary" id="newInvestigationBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    New Investigation
+                </button>
+            </div>
+
+            <!-- Filters card -->
+            <section class="card panel filters-panel">
+                <div class="search-row">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input type="text" placeholder="Search by ID, event name, camera, or date..." id="mainSearch" />
+                </div>
+
+                <div class="filters-row">
+                    <div class="filter-field">
+                        <label for="dateRange">Date Range</label>
+
+                        <div class="select-wrapper date-wrapper">
+
+                            <i class="fa-regular fa-calendar date-calendar-icon"></i>
+
+                            <input type="date" id="dateRange" value="2025-04-27" />
+
+                            <span class="date-arrow">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div class="filter-field">
+                        <label for="eventType">Event Type</label>
+
+                        <div class="select-wrapper">
+                            <i class="fa-solid fa-tag"></i>
+
+                            <select id="eventType">
+                                <option>All Types</option>
+                                <option>Vehicle Loitering</option>
+                                <option>Person–Vehicle Interaction</option>
+                                <option>Night Activity</option>
+                                <option>Restricted Area</option>
+                                <option>Multiple People Gathering</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="filter-field">
+                        <label for="statusFilter">Status</label>
+
+                        <div class="select-wrapper">
+                            <i class="fa-regular fa-clock"></i>
+
+                            <select id="statusFilter">
+                                <option>All Status</option>
+                                <option>In Progress</option>
+                                <option>Open</option>
+                                <option>Completed</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="filter-actions">
+                        <button class="btn btn-secondary" id="resetBtn">Reset</button>
+                        <button class="btn btn-primary" id="searchBtn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Investigations table -->
+            <section class="card panel">
+                <table class="investigations-table" id="investigationsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Event Name</th>
+                            <th>Date &amp; Time</th>
+                            <th>Camera</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>INV-001</td>
+                            <td>Suspicious Vehicle Activity</td>
+                            <td>04:33:18 PM</td>
+                            <td>Camera 01</td>
+                            <td><span class="badge badge-red">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                In Progress
+                            </span></td>
+                            <td><button class="btn btn-secondary btn-sm">
+                                <i class="fa-solid fa-eye"></i>
+                                View
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td>INV-002</td>
+                            <td>Person in Restricted Area</td>
+                            <td>03:21:05 PM</td>
+                            <td>Camera 03</td>
+                            <td><span class="badge badge-orange">
+                                <i class="fa-solid fa-clock"></i>
+                                Open
+                            </span></td>
+                            <td><button class="btn btn-secondary btn-sm">
+                                <i class="fa-solid fa-eye"></i>
+                                View
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td>INV-003</td>
+                            <td>Vehicle Loitering</td>
+                            <td>01:12:16 AM</td>
+                            <td>Camera 02</td>
+                            <td><span class="badge badge-green">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Completed
+                            </span></td>
+                            <td><button class="btn btn-secondary btn-sm">
+                                <i class="fa-solid fa-eye"></i>
+                                View
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td>INV-004</td>
+                            <td>Multiple People Gathering</td>
+                            <td>12:05:34 AM</td>
+                            <td>Camera 04</td>
+                            <td><span class="badge badge-green">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Completed
+                            </span></td>
+                            <td><button class="btn btn-secondary btn-sm">
+                                <i class="fa-solid fa-eye"></i>
+                                View
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td>INV-005</td>
+                            <td>Night Activity</td>
+                            <td>11:48:21 PM</td>
+                            <td>Camera 01</td>
+                            <td><span class="badge badge-orange">
+                                <i class="fa-solid fa-clock"></i>
+                                Open
+                            </span></td>
+                            <td><button class="btn btn-secondary btn-sm">
+                                <i class="fa-solid fa-eye"></i>
+                                View
+                            </button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+    <script src="../javascript/layout.js"></script>
+
+    <script src="../javascript/investigations.js"></script>
+</body>
+
+</html>

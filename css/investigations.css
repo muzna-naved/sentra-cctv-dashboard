@@ -1,0 +1,319 @@
+/* =========================================================
+   investigations.css
+   Page-specific styles for investigations.html
+========================================================= */
+
+.logo-mark {
+    font-size: 20px;
+}
+
+.page-heading-row {
+    margin-top: 0;
+    margin-bottom: var(--space-lg);
+}
+
+.page-heading-row .page-title,
+.page-heading-row .page-subtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* ---- Filters panel ---- */
+
+.filters-panel {
+    margin-bottom: var(--space-lg);
+}
+
+.search-row {
+    margin-bottom: var(--space-md);
+}
+
+.filters-row {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.filter-field {
+    flex: 1;
+    min-width: 160px;
+}
+
+.filter-field label {
+    margin-bottom: var(--space-xs);
+}
+
+.filter-actions {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+
+/* ---- Investigations table ---- */
+
+.investigations-table {
+    font-size: 13px;
+}
+
+.investigations-table th,
+.investigations-table td {
+    padding: 12px 10px;
+}
+
+.investigations-table td:first-child {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ICON STYLES
+   ========================================================= */
+
+
+/* General button icons */
+
+button i {
+    margin-right: 6px;
+}
+
+
+/* =========================================================
+   NEW INVESTIGATION BUTTON
+   ========================================================= */
+
+#newInvestigationBtn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+#newInvestigationBtn i {
+    margin-right: 0;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MAIN SEARCH BAR ICON
+   ========================================================= */
+
+.search-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-row>i {
+    position: absolute;
+    left: 18px;
+    color: #dce5ff;
+    font-size: 16px;
+    z-index: 2;
+}
+
+.search-row input {
+    padding-left: 48px;
+}
+
+
+/* =========================================================
+   FILTER ICONS
+   ========================================================= */
+
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.select-wrapper>i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #dce5ff;
+    font-size: 14px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.select-wrapper select,
+.select-wrapper input {
+    width: 100%;
+    padding-left: 42px;
+}
+
+
+/* =========================================================
+   SEARCH BUTTON ICON
+   ========================================================= */
+
+#searchBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+#searchBtn i {
+    margin-right: 0;
+}
+
+
+/* =========================================================
+   STATUS BADGE ICONS
+   ========================================================= */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.badge i {
+    margin-right: 0;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   VIEW BUTTON ICON
+   ========================================================= */
+
+.btn-sm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.btn-sm i {
+    margin-right: 0;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   DATE RANGE DROPDOWN STYLE
+   ========================================================= */
+
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.select-wrapper input[type="date"] {
+    width: 100%;
+    padding-left: 42px;
+    padding-right: 38px;
+}
+
+
+/* Calendar icon on the left */
+
+.select-wrapper>.fa-calendar {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #dce5ff;
+    font-size: 14px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DATE RANGE
+   ========================================================= */
+
+.date-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+
+/* Calendar icon on LEFT */
+
+.date-wrapper .date-calendar-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #dce5ff;
+    font-size: 14px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+
+/* Date input */
+
+.date-wrapper input[type="date"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 42px;
+    padding-right: 42px;
+}
+
+
+/* Hide browser's BLACK calendar icon */
+
+.date-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+/* DOWN ARROW on RIGHT */
+
+.date-wrapper .date-arrow {
+    position: absolute;
+    right: 14px;
+    left: auto !important;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #dce5ff;
+    font-size: 11px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.date-wrapper .date-arrow i {
+    margin: 0;
+    color: #dce5ff;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   VIEW BUTTONS
+   ========================================================= */
+
+.investigations-table .btn-sm {
+    background: #25258c;
+    border: 1px solid #514cff;
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 7px 13px;
+}
+
+.investigations-table .btn-sm:hover {
+    background: #3030a5;
+    border-color: #6b67ff;
+}
+
+.investigations-table .btn-sm i {
+    color: #ffffff;
+    margin-right: 6px;
+}
+
+.page-container {
+    padding-top: 10px;
+}

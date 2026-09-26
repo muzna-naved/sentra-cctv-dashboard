@@ -1,0 +1,293 @@
+/* =========================================================
+   SENTRA SHARED LAYOUT
+   Global Topbar + Sidebar
+   ========================================================= */
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo-mark {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.logo-mark img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   TOP SEARCH BAR
+   ========================================================= */
+
+.global-topbar .topbar-search {
+    width: 325px;
+    max-width: 325px;
+    height: 36px;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 11px;
+    background: #080f2c;
+    border: 1px solid #343da3;
+    border-radius: 7px;
+    color: #d8def7;
+    box-shadow: 0 0 8px rgba(53, 61, 163, 0.12);
+}
+
+.global-topbar .topbar-search>i {
+    flex-shrink: 0;
+    margin-right: 9px;
+    color: #dce3ff;
+    font-size: 14px;
+}
+
+.global-topbar .topbar-search input {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    color: #e9edff;
+    font-size: 11px;
+}
+
+.global-topbar .topbar-search input::placeholder {
+    color: #8994bd;
+    opacity: 1;
+}
+
+.global-topbar .topbar-search:focus-within {
+    border-color: #5962d1;
+    box-shadow: 0 0 10px rgba(67, 78, 210, 0.18);
+}
+
+
+/* =========================================================
+   TOPBAR RIGHT
+   ========================================================= */
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+/* =========================================================
+   NOTIFICATION
+   ========================================================= */
+
+.topbar-right .icon-btn {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    color: #dce5ff;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.topbar-right .icon-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.topbar-right .icon-btn>i {
+    font-size: 20px;
+    color: #e8edff;
+}
+
+
+/* Notification number */
+
+.topbar-right .icon-btn-badge {
+    position: absolute;
+    top: 1px;
+    right: 0;
+    width: 17px;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #ff304f;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1;
+    border: 2px solid #0a1225;
+}
+
+
+/* =========================================================
+   USER PROFILE
+   ========================================================= */
+
+.topbar-right .user-chip {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+}
+
+.user-chip {
+    cursor: pointer;
+}
+
+
+/* Avatar */
+
+.topbar-right .user-avatar {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #cbd2e8;
+    color: #3b4665;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    overflow: hidden;
+}
+
+
+/* User icon */
+
+.topbar-right .user-avatar i {
+    font-size: 20px;
+    color: #4a5575;
+}
+
+
+/* Name and role */
+
+.topbar-right .user-chip>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 75px;
+}
+
+.topbar-right .user-name {
+    margin: 0;
+    color: #f5f7ff;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+.topbar-right .user-role {
+    margin: 0;
+    color: #8794b8;
+    font-size: 10px;
+    line-height: 14px;
+}
+
+
+/* Arrow */
+
+.topbar-right .user-caret {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 3px;
+    color: #8e9bd0;
+    font-size: 11px;
+}
+
+.topbar-right .user-caret i {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SIDEBAR FOOTER
+   ========================================================= */
+
+.sidebar-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.sidebar-footer .status-pill {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 11px 12px;
+    background: #0b1530;
+    border: 1px solid #26386d;
+    border-radius: 9px;
+    color: #dce5ff;
+    font-size: 11px;
+}
+
+.sidebar-footer .status-pill>div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.sidebar-footer .status-pill p {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.sidebar-footer .status-pill p:first-child {
+    color: #dce5ff;
+    font-size: 11px;
+}
+
+.sidebar-footer .status-pill .text-muted {
+    color: #7184b5;
+    font-size: 10px;
+}
+
+
+/* Green status dot */
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    margin-top: 3px;
+    border-radius: 50%;
+    background: #22d67a;
+    box-shadow: 0 0 0 3px rgba(34, 214, 122, 0.10), 0 0 8px rgba(34, 214, 122, 0.55);
+}
+
+
+/* Motto */
+
+.sidebar-motto {
+    margin-top: 0;
+    color: #6679a8;
+    font-size: 10px;
+    text-align: center;
+}

@@ -1,0 +1,338 @@
+/* =========================================================
+   cctv-events.css
+   Page-specific styles for cctv-events.html
+========================================================= */
+
+.logo-mark {
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   FILTERS PANEL
+========================================================= */
+
+.filters-panel {
+    margin-bottom: var(--space-lg);
+    padding: 16px 14px;
+    box-sizing: border-box;
+}
+
+.filters-row {
+    display: grid;
+    /* Date column widened (1.05fr -> 1.3fr) so the full
+       "MM/DD/YYYY" value fits without clipping */
+    grid-template-columns: 0.95fr 1.3fr 1.37fr 0.87fr 0.9fr auto;
+    align-items: end;
+    gap: 9px;
+    width: 100%;
+}
+
+.filter-field {
+    width: 100%;
+    min-width: 0;
+}
+
+.filter-field-time {
+    width: 100%;
+    min-width: 0;
+}
+
+.filter-field label {
+    display: block;
+    margin-bottom: 7px;
+}
+
+
+/* =========================================================
+   TIME RANGE  
+========================================================= */
+
+.time-range-box {
+    position: relative;
+    width: 100%;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    box-sizing: border-box;
+    background: #101a32;
+    border: 1px solid #26375e;
+    border-radius: 6px;
+    padding: 0 30px 0 36px;
+    color: #ffffff;
+}
+
+.time-range-box:focus-within {
+    border-color: #4d5cff;
+    box-shadow: 0 0 0 1px rgba(77, 92, 255, 0.25);
+}
+
+.time-range-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #dce5ff;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+
+/* Native time inputs — no border, transparent, filling the box */
+
+.time-range-box input.time-native {
+    flex: 1 1 0;
+    min-width: 0;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 12px;
+    font-family: inherit;
+    text-align: center;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    color-scheme: dark;
+    /* makes the popup clock dark, not white */
+}
+
+
+/* Kill the little clock icon Chrome draws inside the field */
+
+.time-range-box input.time-native::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.time-range-sep {
+    color: #dce5ff;
+    font-size: 12px;
+    flex: 0 0 auto;
+    padding: 0;
+    margin: 0;
+    pointer-events: none;
+}
+
+.time-range-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #dce5ff;
+    font-size: 10px;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   FILTER BUTTON
+========================================================= */
+
+.filter-actions {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+/* =========================================================
+   DATE + FILTER ICONS
+========================================================= */
+
+.cctv-input-icon {
+    position: relative;
+    width: 100%;
+}
+
+.cctv-input-icon>i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #dce5ff;
+    font-size: 14px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+
+/* Date input: left/right padding trimmed so the full date
+   value fits before the custom chevron overlay */
+
+.cctv-input-icon input[type="date"] {
+    width: 100%;
+    height: 38px;
+    box-sizing: border-box;
+    padding-left: 34px;
+    padding-right: 26px;
+    font-size: 13px;
+    letter-spacing: -0.2px;
+    cursor: pointer;
+    color-scheme: dark;
+}
+
+.cctv-input-icon input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.cctv-input-icon::after {
+    content: "\f078";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #dce5ff;
+    font-size: 10px;
+    pointer-events: none;
+}
+
+.cctv-select-icon {
+    position: relative;
+    width: 100%;
+}
+
+.cctv-select-icon>i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #dce5ff;
+    font-size: 14px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.cctv-select-icon select {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 40px;
+}
+
+
+/* =========================================================
+   APPLY FILTERS BUTTON
+========================================================= */
+
+.filters-panel input,
+.filters-panel select {
+    height: 38px;
+    box-sizing: border-box;
+}
+
+#applyFiltersBtn {
+    height: 38px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   EVENTS TABLE
+========================================================= */
+
+.events-table {
+    font-size: 13px;
+}
+
+.events-table th,
+.events-table td {
+    padding: 12px 10px;
+    white-space: nowrap;
+}
+
+.events-table td:first-child {
+    color: var(--text-muted);
+}
+
+.events-table td:nth-child(2) {
+    white-space: normal;
+    font-weight: 600;
+}
+
+.events-table .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.events-table .badge i {
+    margin: 0;
+    font-size: 10px;
+}
+
+.events-table .btn-sm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background: #3030a5;
+    border: 1px solid #514cff;
+    color: #ffffff;
+    border-radius: 7px;
+    padding: 7px 13px;
+}
+
+.events-table .btn-sm:hover {
+    background: #3b3bb5;
+    border-color: #6b67ff;
+}
+
+.events-table .btn-sm i {
+    margin: 0;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+    .filters-row {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .filters-row {
+        grid-template-columns: 1fr;
+    }
+    .filter-actions {
+        width: 100%;
+    }
+    #applyFiltersBtn {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   CCTV EVENTS - USE MORE AVAILABLE WIDTH
+========================================================= */
+
+.main-content {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+}

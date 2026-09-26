@@ -1,0 +1,116 @@
+/* =========================================================
+   SENTRA — Reports Page
+   Loaded after base.css + layout.css
+========================================================= */
+
+
+/* -----------------------
+   Generate Report button icon spacing
+------------------------ */
+
+#generate-report-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+
+/* -----------------------
+   Reports card wrapper
+------------------------ */
+
+.reports-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+
+/* -----------------------
+   Tabs
+------------------------ */
+
+.reports-tabs {
+    display: flex;
+    gap: var(--space-xs);
+    padding: var(--space-md) var(--space-md) 0 var(--space-md);
+}
+
+.tab-btn {
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.tab-btn:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-card-hover);
+}
+
+.tab-btn.active {
+    background-color: var(--accent-blue);
+    color: #fff;
+}
+
+
+/* -----------------------
+   Table
+------------------------ */
+
+.reports-table-wrap {
+    padding: var(--space-md);
+    overflow-x: auto;
+}
+
+#reports-table th {
+    text-transform: none;
+}
+
+#reports-table td {
+    color: var(--text-primary);
+}
+
+.report-type-cell {
+    color: var(--text-secondary);
+}
+
+.report-date-cell {
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+
+/* Download action button */
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    color: var(--accent-blue);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+}
+
+.download-btn:hover {
+    background-color: var(--bg-card-hover);
+    color: var(--accent-blue-hover);
+}
+
+.download-btn i {
+    font-size: 12px;
+}
+
+
+/* Empty state */
+
+.reports-empty {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    padding: var(--space-xl) 0;
+}

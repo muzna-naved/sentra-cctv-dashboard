@@ -1,0 +1,153 @@
+/* =========================================================
+   SENTRA — Settings Page
+   Loaded after base.css + layout.css
+========================================================= */
+
+
+/* -----------------------
+   Top-level Settings tabs
+------------------------ */
+
+.settings-tabs {
+    display: flex;
+    gap: var(--space-xs);
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 6px;
+    margin-bottom: var(--space-lg);
+    width: fit-content;
+}
+
+.settings-tabs .tab-btn {
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: var(--radius-sm);
+}
+
+.settings-tabs .tab-btn:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-card-hover);
+}
+
+.settings-tabs .tab-btn.active {
+    background-color: var(--accent-blue);
+    color: #fff;
+}
+
+
+/* -----------------------
+   Panel grid (System Settings | Detection Settings)
+------------------------ */
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+    align-items: start;
+}
+
+.settings-panel .card {
+    padding: var(--space-lg);
+}
+
+
+/* -----------------------
+   Form fields
+------------------------ */
+
+.field {
+    margin-bottom: var(--space-md);
+}
+
+.field:last-child {
+    margin-bottom: 0;
+}
+
+
+/* -----------------------
+   Toggle rows
+------------------------ */
+
+.toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 13px;
+    color: var(--text-primary);
+}
+
+.toggle-row:last-of-type {
+    border-bottom: none;
+}
+
+
+/* Toggle switch */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--border-color);
+    border-radius: 999px;
+    transition: background-color 0.2s ease;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.switch input:checked+.slider {
+    background-color: var(--accent-blue);
+}
+
+.switch input:checked+.slider::before {
+    transform: translateX(18px);
+}
+
+
+/* -----------------------
+   Save row
+------------------------ */
+
+.save-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--space-lg);
+}
+
+#save-settings-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}

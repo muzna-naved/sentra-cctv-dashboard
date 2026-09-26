@@ -1,0 +1,502 @@
+/* =========================================================
+   ALERTS PAGE
+   Page-specific styling only
+
+   IMPORTANT:
+   Sidebar, topbar, body and general layout are handled by:
+   base.css
+   layout.css
+   layout.js
+
+   This file only styles the Alerts page itself.
+========================================================= */
+
+
+/* =========================================================
+   PAGE CONTAINER
+========================================================= */
+
+.page-container {
+    padding: 15px 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.page-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.page-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+}
+
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.filter-card {
+    background: #111b35;
+    border: 1px solid #263b72;
+    border-radius: 10px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 140px;
+}
+
+.filter-group label {
+    font-size: 0.8rem;
+    color: #c9d5f5;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   INPUTS + SELECTS
+========================================================= */
+
+.form-select,
+.form-input {
+    background: #101a32;
+    border: 1px solid #2b4078;
+    color: #ffffff;
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    outline: none;
+    height: 38px;
+    box-sizing: border-box;
+}
+
+.form-select:focus,
+.form-input:focus {
+    border-color: #4d5cff;
+    box-shadow: 0 0 0 1px rgba(77, 92, 255, 0.2);
+}
+
+
+/* Dropdown option colors */
+
+.form-select option {
+    background: #101a32;
+    color: #ffffff;
+}
+
+
+/* Date and Time input */
+
+.form-input[type="date"],
+.form-input[type="time"] {
+    color-scheme: dark;
+}
+
+
+/* =========================================================
+   FILTER BUTTONS
+========================================================= */
+
+.filter-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+
+/* Apply */
+
+.btn-primary {
+    background: #4d5cff;
+    border-color: #5966ff;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: #5b67ff;
+    border-color: #6873ff;
+}
+
+
+/* Reset / secondary buttons */
+
+.btn-secondary {
+    background: #1b294c;
+    border-color: #334a82;
+    color: #dce5ff;
+}
+
+.btn-secondary:hover {
+    background: #253761;
+    border-color: #465fa0;
+}
+
+
+/* Small buttons */
+
+.btn-sm {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.table-card {
+    background: #111b35;
+    border: 1px solid #263b72;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   ALERTS TABLE
+========================================================= */
+
+.alerts-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+
+/* Table heading */
+
+.alerts-table th {
+    background: #121f40;
+    padding: 1rem 1.25rem;
+    font-size: 0.8rem;
+    color: #aebfe8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #263b72;
+}
+
+
+/* Table cells */
+
+.alerts-table td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #243765;
+    font-size: 0.88rem;
+    color: #e5ebff;
+}
+
+
+/* Last row */
+
+.alerts-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* Hover */
+
+.alerts-table tbody tr:hover {
+    background: rgba(48, 66, 120, 0.18);
+}
+
+
+/* Event name */
+
+.alerts-table td strong {
+    color: #f1f4ff;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SEVERITY BADGES
+========================================================= */
+
+.tag-severity {
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+
+/* High */
+
+.tag-high {
+    background: #ff304f;
+    color: #ffffff;
+    border: 1px solid #ff304f;
+}
+
+
+/* Medium */
+
+.tag-medium {
+    background: #ffd329;
+    color: #171717;
+    border: 1px solid #ffd329;
+}
+
+
+/* Low */
+
+.tag-low {
+    background: #35d98b;
+    color: #071b12;
+    border: 1px solid #35d98b;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+========================================================= */
+
+.tag-status {
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+
+/* Open */
+
+.tag-open {
+    background: #ff304f;
+    color: #ffffff;
+    border: 1px solid #ff304f;
+}
+
+
+/* Resolved */
+
+.tag-resolved {
+    background: #35d98b;
+    color: #071b12;
+    border: 1px solid #35d98b;
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.alerts-table .btn-secondary {
+    background: #25258c;
+    border: 1px solid #514cff;
+    color: #ffffff;
+    border-radius: 7px;
+    padding: 7px 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.alerts-table .btn-secondary:hover {
+    background: #3030a5;
+    border-color: #6b67ff;
+}
+
+.alerts-table .btn-secondary i {
+    color: #ffffff;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   NO ALERTS MESSAGE
+========================================================= */
+
+.no-alerts {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 2rem !important;
+}
+
+
+/* =========================================================
+   MODAL (Investigations-style)
+========================================================= */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 7, 20, 0.78);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal-overlay.active {
+    display: flex !important;
+}
+
+.modal-card {
+    background: #101a32;
+    border: 1px solid #2a3d6b;
+    border-radius: 12px;
+    width: 520px;
+    max-width: 100%;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+/* Header */
+
+.modal-header {
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #1e2c50;
+}
+
+.modal-header h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #f1f4ff;
+    margin: 0;
+}
+
+
+/* × close */
+
+.modal-close {
+    background: transparent;
+    border: none;
+    color: #9aabd6;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 4px;
+    transition: color .15s ease;
+}
+
+.modal-close:hover {
+    color: #ffffff;
+}
+
+
+/* Body */
+
+.modal-body {
+    padding: 20px 22px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: #e5ebff;
+}
+
+.modal-body p {
+    margin: 0;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.modal-body strong {
+    color: #f1f4ff;
+    font-weight: 600;
+}
+
+
+/* Footer */
+
+.modal-footer {
+    padding: 16px 22px 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.modal-footer .btn {
+    min-width: 100px;
+    height: 38px;
+    padding: 0 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+    .filter-card {
+        gap: 1rem;
+    }
+    .filter-group {
+        min-width: 130px;
+    }
+}
+
+@media (max-width: 700px) {
+    .page-container {
+        padding: 1rem 0;
+    }
+    .filter-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .filter-group {
+        width: 100%;
+    }
+    .filter-actions {
+        width: 100%;
+    }
+    .filter-actions .btn {
+        flex: 1;
+    }
+    .table-card {
+        overflow-x: auto;
+    }
+    .alerts-table {
+        min-width: 700px;
+    }
+}
+
+
+/* Reduce space between topbar and Alerts content */
+
+.main-content>.page-container {
+    margin-top: 0 !important;
+}
+
+.page-header {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentra — Reports</title>
+
+    <!-- Font Awesome (used by layout.js for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Shared base + layout styles -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="../css/reports.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+</head>
+
+<body data-page="reports">
+
+    <!--
+    layout.js reads #page-content, rebuilds the whole document
+    with the shared topbar + sidebar, then drops this markup into
+    #shared-page-content. Only page-specific content goes in here.
+-->
+    <div id="page-content">
+
+        <!-- ================= PAGE HEADER ================= -->
+        <div class="topbar">
+            <div>
+                <h1 class="page-title" style="margin-top:0;">Reports</h1>
+                <p class="page-subtitle" style="margin-bottom:0;">Generate and export investigation reports</p>
+            </div>
+
+            <div class="topbar-right">
+                <button class="btn btn-primary" id="generate-report-btn">
+                <i class="fa-solid fa-file-circle-plus"></i>
+                Generate Report
+            </button>
+            </div>
+        </div>
+
+        <!-- ================= REPORTS CARD ================= -->
+        <div class="card reports-card">
+
+            <!-- Tabs -->
+            <div class="reports-tabs" id="reports-tabs">
+                <button class="tab-btn active" data-filter="all">All Reports</button>
+                <button class="tab-btn" data-filter="event">Event Reports</button>
+                <button class="tab-btn" data-filter="investigation">Investigation Reports</button>
+            </div>
+
+            <!-- Table -->
+            <div class="reports-table-wrap">
+                <table id="reports-table">
+                    <thead>
+                        <tr>
+                            <th>Report Name</th>
+                            <th>Type</th>
+                            <th>Date Created</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reports-table-body">
+                        <!-- rows injected by reports.js -->
+                    </tbody>
+                </table>
+
+                <p class="reports-empty hidden" id="reports-empty">
+                    No reports found for this filter.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Shared layout script -->
+    <script src="../javascript/layout.js"></script>
+
+    <!-- Page-specific script -->
+    <script src="../javascript/reports.js"></script>
+
+</body>
+
+</html>

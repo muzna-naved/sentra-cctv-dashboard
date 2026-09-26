@@ -1,0 +1,720 @@
+/* =========================================================
+   VIDEO SEARCH PAGE
+   Page-specific styling only
+
+   Shared sidebar, topbar, body and general layout:
+   base.css
+   layout.css
+   layout.js
+========================================================= */
+
+
+/* =========================================================
+   PAGE CONTAINER
+========================================================= */
+
+.page-container {
+    padding: 0 0.75rem 1rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+
+/* Reduce the shared .main-content side padding (24px from
+   base.css) just for this page, so the filter/results/player
+   cards sit closer to the screen edges */
+
+.main-content {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.page-header {
+    margin: 0;
+}
+
+.page-title {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.page-subtitle {
+    margin-top: 0.3rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.filter-card {
+    background: #111b35;
+    border: 1px solid #263b72;
+    border-radius: 10px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FILTER GROUP
+========================================================= */
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 160px;
+}
+
+.filter-group label {
+    font-size: 0.8rem;
+    color: #c9d5f5;
+    font-weight: 500;
+}
+
+
+/* Column widths: Date and Camera narrower, Object wider to fit
+   its longer "Person / Vehicle / ..." label comfortably */
+
+.filter-card>.filter-group:nth-child(1) {
+    flex: 0.65;
+    min-width: 130px;
+}
+
+.filter-card>.filter-group:nth-child(3) {
+    flex: 0.7;
+    min-width: 130px;
+}
+
+.filter-card>.filter-group:nth-child(4) {
+    flex: 1.7;
+    min-width: 220px;
+}
+
+
+/* =========================================================
+   INPUTS + SELECTS
+========================================================= */
+
+.form-input,
+.form-select {
+    width: 100%;
+    height: 38px;
+    box-sizing: border-box;
+    background: #101a32;
+    border: 1px solid #2b4078;
+    color: #ffffff;
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    outline: none;
+}
+
+
+/* Focus */
+
+.form-input:focus,
+.form-select:focus {
+    border-color: #4d5cff;
+    box-shadow: 0 0 0 1px rgba(77, 92, 255, 0.2);
+}
+
+
+/* Dropdown options */
+
+.form-select option {
+    background: #101a32;
+    color: #ffffff;
+}
+
+
+/* Date */
+
+.form-input[type="date"],
+.form-input[type="time"] {
+    color-scheme: dark;
+}
+
+
+/* =========================================================
+   FILTER ACTIONS
+========================================================= */
+
+.filter-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn {
+    height: 38px;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+
+/* Primary */
+
+.btn-primary {
+    background: #4d5cff;
+    border-color: #5966ff;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: #5b67ff;
+    border-color: #6873ff;
+}
+
+
+/* =========================================================
+   SEARCH LAYOUT
+========================================================= */
+
+.search-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.7fr);
+    gap: var(--space-md);
+    width: 100%;
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   SEARCH RESULTS
+========================================================= */
+
+.results-panel {
+    background: #111b35;
+    border: 1px solid #263b72;
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.results-header {
+    padding: 16px 20px;
+    background: #121f40;
+    border-bottom: 1px solid #263b72;
+}
+
+.results-header h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.results-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+
+/* Individual search result */
+
+.result-item {
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 85px;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    background: #111b35;
+    border-bottom: 1px solid #263b72;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+
+/* Hover */
+
+.result-item:hover {
+    background: #172344;
+}
+
+
+/* Selected result */
+
+.result-item.active {
+    background: #1b2b52;
+    border-left: 3px solid #3b82f6;
+}
+
+
+/* Thumbnail */
+
+.result-thumb-box {
+    width: 90px;
+    height: 58px;
+    flex-shrink: 0;
+    background: #080f20;
+    border: 1px solid #2b4078;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #8fb7ff;
+    font-size: 12px;
+}
+
+.result-thumb-box i {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.result-thumb-box span {
+    color: #9fb0d8;
+    font-size: 10px;
+}
+
+
+/* Result information */
+
+.result-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.result-time {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.result-camera {
+    color: #8fa5d4;
+    font-size: 11px;
+}
+
+.result-event {
+    color: #dce5ff;
+    font-size: 12px;
+}
+
+
+/* Scrollbar */
+
+.results-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.results-list::-webkit-scrollbar-track {
+    background: #0b1220;
+}
+
+.results-list::-webkit-scrollbar-thumb {
+    background: #304b8c;
+    border-radius: 5px;
+}
+
+
+/* =========================================================
+   PLAYER PANEL
+========================================================= */
+
+.player-panel {
+    background: #111b35;
+    border: 1px solid #263b72;
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 0;
+}
+
+
+/* =========================================================
+   PLAYER HEADER
+========================================================= */
+
+.player-header {
+    height: 48px;
+    padding: 0 1rem;
+    background: #121f40;
+    border-bottom: 1px solid #263b72;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.timestamp-label {
+    color: #dce5ff;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.player-actions {
+    display: flex;
+    align-items: center;
+}
+
+.icon-btn {
+    color: #aebfe8;
+    cursor: pointer;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.icon-btn:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   VIDEO DISPLAY
+========================================================= */
+
+.video-display {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #050b18;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CCTV PLACEHOLDER
+========================================================= */
+
+.cctv-placeholder {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient( circle at center, #16264a 0%, #0b1225 45%, #050b18 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* CCTV icon */
+
+.cctv-bg-icon {
+    font-size: 48px;
+    color: #273b67;
+    opacity: 0.65;
+}
+
+
+/* CCTV text */
+
+.cctv-overlay-text {
+    color: #8195bd;
+    font-size: 12px;
+    background: rgba(5, 11, 24, 0.65);
+    padding: 5px 9px;
+    border-radius: 4px;
+}
+
+
+/* =========================================================
+   BOUNDING BOXES
+========================================================= */
+
+.box-overlay {
+    position: absolute;
+    border: 2px solid;
+    box-sizing: border-box;
+}
+
+
+/* Person */
+
+.person-box {
+    left: 18%;
+    top: 22%;
+    width: 17%;
+    height: 48%;
+    border-color: #35d98b;
+}
+
+
+/* Motorcycle */
+
+.motorcycle-box {
+    left: 45%;
+    top: 52%;
+    width: 20%;
+    height: 22%;
+    border-color: #4d8dff;
+}
+
+
+/* Car */
+
+.car-box {
+    right: 12%;
+    top: 35%;
+    width: 22%;
+    height: 28%;
+    border-color: #9b6cff;
+}
+
+
+/* =========================================================
+   BOX TAGS
+========================================================= */
+
+.box-tag {
+    position: absolute;
+    top: -22px;
+    left: -2px;
+    padding: 3px 6px;
+    font-size: 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+    color: #ffffff;
+}
+
+
+/* Green */
+
+.green-tag {
+    background: #35d98b;
+    color: #071b12;
+}
+
+
+/* Blue */
+
+.blue-tag {
+    background: #4d8dff;
+    color: #ffffff;
+}
+
+
+/* Purple */
+
+.purple-tag {
+    background: #9b6cff;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   PLAYER CONTROLS
+========================================================= */
+
+.player-controls {
+    height: 48px;
+    padding: 0 0.75rem;
+    background: #0d1730;
+    border-top: 1px solid #263b72;
+    border-bottom: 1px solid #263b72;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-sizing: border-box;
+}
+
+
+/* Control buttons */
+
+.control-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: transparent;
+    color: #c9d5f5;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background: #1b294c;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.progress-bar-container {
+    flex: 1;
+    height: 5px;
+    background: #27385f;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: #4d5cff;
+    border-radius: 5px;
+}
+
+
+/* Time */
+
+.time-display {
+    color: #9fb0d8;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   JUMP TO TIME
+========================================================= */
+
+.jump-time-card {
+    padding: 0.85rem 1rem;
+    background: #111b35;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.jump-time-card label {
+    color: #c9d5f5;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.jump-input {
+    width: 120px;
+    flex: none;
+}
+
+
+/* Go button */
+
+#btn-jump-go {
+    flex: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+    .search-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+    }
+    .filter-card {
+        gap: 0.75rem;
+    }
+}
+
+@media (max-width: 850px) {
+    .search-layout {
+        grid-template-columns: 1fr;
+    }
+    .results-panel {
+        max-height: 350px;
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 700px) {
+    .page-container {
+        padding: 0 1rem 1rem 1rem;
+    }
+    .filter-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .filter-group {
+        width: 100%;
+    }
+    .filter-actions {
+        width: 100%;
+    }
+    .filter-actions .btn {
+        width: 100%;
+    }
+    .jump-time-card {
+        flex-wrap: wrap;
+    }
+    .jump-input {
+        flex: 1;
+        width: auto;
+    }
+}
+
+
+/* Results list rendering (kept from earlier debugging — safe
+   to leave in, these are the same rules already defined above,
+   just reinforced so a stray layout.css rule can't collapse the
+   panel to zero height) */
+
+.results-list {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    min-height: 100px !important;
+    overflow-y: auto !important;
+}
+
+.result-item {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    min-height: 85px !important;
+    padding: 12px 16px !important;
+    background: #111b35 !important;
+    border-bottom: 1px solid #263b72 !important;
+    box-sizing: border-box !important;
+}
+
+
+/* Inline time-range pair */
+
+.time-range-inline {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.time-range-inline .form-input {
+    flex: 1;
+    min-width: 0;
+}
+
+.time-range-dash {
+    color: #c9d5f5;
+    font-size: 0.85rem;
+    flex: 0 0 auto;
+}

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SENTRA — CCTV Events</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/cctv-events.css" />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body data-page="cctv-events">
+    <div id="page-content">
+
+        <!-- ============ MAIN CONTENT ============ -->
+        <main class="main-content">
+
+            <h1 class="page-title">CCTV Events</h1>
+            <p class="page-subtitle">View all detected events from CCTV footage</p>
+
+            <!-- Filters card -->
+            <section class="card panel filters-panel">
+                <div class="filters-row">
+                    <div class="filter-field">
+                        <label for="dateRange">Date Range</label>
+
+                        <div class="cctv-input-icon">
+                            <i class="fa-regular fa-calendar"></i>
+
+                            <input type="date" id="dateRange" value="2025-04-27" />
+                        </div>
+                    </div>
+
+                    <div class="filter-field filter-field-time">
+                        <label for="timeRange">Time Range</label>
+
+                        <div class="time-range-box">
+                            <i class="fa-regular fa-clock time-range-icon"></i>
+
+                            <input type="time" id="timeFrom" class="time-native" value="00:00">
+                            <span class="time-range-sep">-</span>
+                            <input type="time" id="timeTo" class="time-native" value="23:59">
+
+                            <i class="fa-solid fa-chevron-down time-range-arrow"></i>
+                        </div>
+                    </div>
+
+                    <div class="filter-field">
+                        <label for="eventTypeFilter">Event Type</label>
+
+                        <div class="cctv-select-icon">
+                            <i class="fa-solid fa-tag"></i>
+
+                            <select id="eventTypeFilter">
+                                <option>All Types</option>
+                                <option>Vehicle Loitering</option>
+                                <option>Person–Vehicle Interaction</option>
+                                <option>Night Activity</option>
+                                <option>Restricted Area</option>
+                                <option>Multiple People Gathering</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="filter-field">
+                        <label for="cameraFilter">Camera</label>
+
+                        <div class="cctv-select-icon">
+                            <i class="fa-solid fa-video"></i>
+
+                            <select id="cameraFilter">
+                                <option>All Cameras</option>
+                                <option>Camera 01</option>
+                                <option>Camera 02</option>
+                                <option>Camera 03</option>
+                                <option>Camera 04</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="filter-field">
+                        <label for="statusFilter">Status</label>
+
+                        <div class="cctv-select-icon">
+                            <i class="fa-regular fa-clock"></i>
+
+                            <select id="statusFilter">
+                                    <option>All Status</option>
+                                    <option>Active</option>
+                                    <option>Open</option>
+                                    <option>Completed</option>
+                                </select>
+                        </div>
+                    </div>
+
+                    <div class="filter-actions">
+                        <button class="btn btn-primary" id="applyFiltersBtn">
+                                <i class="fa-solid fa-filter"></i>
+                                Apply Filters
+                            </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Events table -->
+            <section class="card panel">
+                <table class="events-table" id="eventsTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Event Name</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Camera</th>
+                            <th>Person ID</th>
+                            <th>Vehicle ID</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Suspicious Vehicle Activity</td>
+                            <td>04:33:18 PM</td>
+                            <td>04:33:46 PM</td>
+                            <td>Camera 01</td>
+                            <td>17</td>
+                            <td>04</td>
+                            <td><span class="badge badge-red">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                Active
+                            </span></td>
+                            <td><button class="btn btn-secondary btn-sm">
+                                <i class="fa-solid fa-eye"></i>
+                                View
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Person in Restricted Area</td>
+                            <td>03:21:05 PM</td>
+                            <td>03:23:17 PM</td>
+                            <td>Camera 03</td>
+                            <td>12</td>
+                            <td>-</td>
+                            <td><span class="badge badge-orange">
+                                <i class="fa-solid fa-clock"></i>
+                                Open
+                            </span></td>
+                            <td><button class="btn btn-secondary btn-sm">
+                                <i class="fa-solid fa-eye"></i>
+                                View
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Vehicle Loitering</td>
+                            <td>01:12:16 AM</td>
+                            <td>01:18:03 AM</td>
+                            <td>Camera 02</td>
+                            <td>07</td>
+                            <td>-</td>
+                            <td><span class="badge badge-green">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Completed
+                            </span></td>
+                            <td><button class="btn btn-secondary btn-sm">
+                                <i class="fa-solid fa-eye"></i>
+                                View
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Multiple People Gathering</td>
+                            <td>12:05:34 AM</td>
+                            <td>12:07:21 AM</td>
+                            <td>Camera 04</td>
+                            <td>21, 22, 23</td>
+                            <td>-</td>
+                            <td><span class="badge badge-green">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Completed
+                            </span></td>
+                            <td><button class="btn btn-secondary btn-sm">
+                                <i class="fa-solid fa-eye"></i>
+                                View
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Night Activity</td>
+                            <td>11:48:21 PM</td>
+                            <td>11:52:08 PM</td>
+                            <td>Camera 01</td>
+                            <td>08</td>
+                            <td>-</td>
+                            <td><span class="badge badge-orange">
+                                <i class="fa-solid fa-clock"></i>
+                                Open
+                            </span></td>
+                            <td><button class="btn btn-secondary btn-sm">
+                                <i class="fa-solid fa-eye"></i>
+                                View
+                            </button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+    <script src="../javascript/layout.js"></script>
+    <script src="../javascript/cctv-events.js"></script>
+</body>
+
+</html>

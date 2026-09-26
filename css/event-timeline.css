@@ -1,0 +1,310 @@
+.timeline-filters-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.filter-select {
+    width: 160px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+}
+
+.timeline-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 20px;
+}
+
+input.filter-select {
+    color-scheme: dark;
+    cursor: pointer;
+}
+
+
+/* Left Timeline Card */
+
+.timeline-card {
+    padding: 24px;
+    position: relative;
+    min-height: 420px;
+}
+
+.timeline-container {
+    position: relative;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* The vertical line: from first dot center to last dot center */
+
+.timeline-line {
+    position: absolute;
+    left: 9px;
+    top: 16px;
+    bottom: 16px;
+    width: 3px;
+    background: var(--accent-blue);
+    border-radius: 2px;
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 90px 1fr 110px 110px;
+    align-items: center;
+    min-height: 32px;
+    font-size: 13px;
+    padding: 8px 8px 8px 32px;
+    cursor: pointer;
+    transition: background 0.15s;
+    border-radius: 4px;
+}
+
+.timeline-item:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.timeline-item.active-timeline-item {
+    background: rgba(47, 125, 250, 0.08);
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 10.5px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--accent-blue);
+    border: 2px solid #d9e5ff;
+    box-sizing: content-box;
+    z-index: 2;
+    box-shadow: 0 0 0 3px rgba(47, 125, 250, 0.15);
+}
+
+.timeline-time {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.timeline-desc {
+    color: var(--text-primary);
+}
+
+.timeline-cam {
+    color: var(--text-secondary);
+}
+
+.timeline-tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.badge-blue {
+    background: rgba(47, 125, 250, 0.2);
+    color: #5296ff;
+}
+
+
+/* Right Column Stack */
+
+.timeline-sidebar-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* Preview Card */
+
+.preview-card {
+    padding: 12px;
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+}
+
+.rec-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-red);
+    font-size: 10px;
+}
+
+.rec-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--color-red);
+    border-radius: 50%;
+}
+
+.preview-screen {
+    position: relative;
+    height: 180px;
+    background: #0a1225 url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=600&q=80') center/cover no-repeat;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   BOUNDING BOXES
+========================================================= */
+
+.bounding-box {
+    position: absolute;
+    border: 2px solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.box-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px 0 4px 0;
+    white-space: nowrap;
+    line-height: 1.3;
+}
+
+
+/* Person — green */
+
+.person-box {
+    border-color: #2ecc71;
+    top: 30%;
+    left: 28%;
+    width: 22%;
+    height: 55%;
+}
+
+.person-box .box-tag {
+    background: #2ecc71;
+    color: #062b16;
+}
+
+
+/* Motorcycle — blue */
+
+.moto-box {
+    border-color: #3498db;
+    top: 48%;
+    left: 52%;
+    width: 22%;
+    height: 32%;
+}
+
+.moto-box .box-tag {
+    background: #3498db;
+    color: #ffffff;
+}
+
+
+/* Purple tag support (used elsewhere) */
+
+.badge-purple,
+.purple-tag {
+    background: rgba(155, 108, 255, 0.2);
+    color: #b9a3ff;
+}
+
+.car-box {
+    border-color: #9b6cff;
+}
+
+.car-box .box-tag {
+    background: #9b6cff;
+    color: #ffffff;
+}
+
+.truck-box {
+    border-color: #ffb020;
+}
+
+.truck-box .box-tag {
+    background: #ffb020;
+    color: #1e1400;
+}
+
+
+/* Optional: a red-tag variant for rule-triggered events */
+
+.red-tag {
+    background: #ff304f;
+    color: #ffffff;
+}
+
+.preview-timestamp {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    font-size: 10px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.preview-cam-label {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    font-size: 10px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+
+/* Related Event Card */
+
+.related-event-card {
+    padding: 16px;
+}
+
+.related-title {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.related-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 12px;
+}
+
+.related-metadata {
+    font-size: 12px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 8px;
+}

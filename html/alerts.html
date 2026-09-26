@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SENTRA - Alerts</title>
+
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="../css/alerts.css">
+
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body data-page="alerts">
+
+    <!-- layout.js will insert the shared sidebar and topbar here -->
+    <div id="page-content">
+
+        <main class="main-content">
+
+            <section class="page-container">
+
+                <!-- PAGE HEADER -->
+                <div class="page-header">
+                    <h1 class="page-title">Alerts</h1>
+                    <p class="page-subtitle">
+                        Rule-triggered events and important notifications
+                    </p>
+                </div>
+
+
+                <!-- FILTER PANEL -->
+                <div class="filter-card">
+
+                    <!-- Severity -->
+                    <div class="filter-group">
+                        <label for="severity-filter">Severity</label>
+
+                        <select id="severity-filter" class="form-select">
+                            <option value="ALL">All Severity</option>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </div>
+
+
+                    <!-- Status -->
+                    <div class="filter-group">
+                        <label for="status-filter">Status</label>
+
+                        <select id="status-filter" class="form-select">
+                            <option value="ALL">All Status</option>
+                            <option value="Open">Open</option>
+                            <option value="Resolved">Resolved</option>
+                        </select>
+                    </div>
+
+
+                    <!-- Date -->
+                    <div class="filter-group">
+                        <label for="date-filter">Date</label>
+
+                        <input type="date" id="date-filter" class="form-input" value="2025-04-27">
+                    </div>
+
+
+                    <!-- Time -->
+                    <div class="filter-group">
+                        <label for="time-filter">Time</label>
+
+                        <input type="time" id="time-filter" class="form-input">
+                    </div>
+
+
+                    <!-- Buttons -->
+                    <div class="filter-actions">
+
+                        <button id="btn-apply-filters" class="btn btn-primary">
+                            Apply
+                        </button>
+
+                        <button id="btn-reset-filters" class="btn btn-secondary">
+                            Reset
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ALERTS TABLE -->
+                <div class="table-card">
+
+                    <table class="alerts-table">
+
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Event Name</th>
+                                <th>Severity</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="alerts-table-body">
+                            <!-- JavaScript will insert rows here -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ALERT DETAILS MODAL -->
+        <div class="modal-overlay" id="alert-modal">
+            <div class="modal-card">
+
+                <div class="modal-header">
+                    <h3 id="modal-title">Alert Details</h3>
+                    <button class="modal-close" id="modal-close-btn" aria-label="Close">&times;</button>
+                </div>
+
+                <div class="modal-body" id="modal-body-content">
+                    <!-- filled by JS -->
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="modal-resolve-btn">Toggle Status</button>
+                    <button class="btn btn-secondary" id="modal-cancel-btn">Close</button>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <!-- Shared Layout JavaScript -->
+    <script src="../javascript/layout.js"></script>
+
+    <!-- Alerts JavaScript -->
+    <script src="../javascript/alerts.js"></script>
+
+</body>
+
+</html>

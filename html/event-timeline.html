@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENTRA - Event Timeline</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/event-timeline.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body data-page="event-timeline">
+
+    <!-- Content wrapped here will be injected into the main shell via layout.js -->
+    <div id="page-content">
+
+        <!-- Page Header -->
+        <div class="page-header-block">
+            <h1 class="page-title">Event Timeline</h1>
+            <p class="page-subtitle">Chronological view of all detected events</p>
+        </div>
+
+        <!-- Filter Dropdowns Row -->
+        <div class="timeline-filters-row">
+            <input type="date" class="filter-select" id="timeline-date" value="2025-04-27">
+            <select class="filter-select">
+                <option>All Cameras</option>
+                <option>Camera 01</option>
+                <option>Camera 02</option>
+            </select>
+            <select class="filter-select">
+                <option>All Event Types</option>
+                <option>Person Detected</option>
+                <option>Vehicle Approach</option>
+            </select>
+        </div>
+
+        <!-- Main Workspace Split Grid -->
+        <div class="timeline-main-grid">
+
+            <!-- Left Column: Chronological Event Timeline -->
+            <div class="card timeline-card">
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+
+                    <div class="timeline-item active-timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-time">04:33:18</div>
+                        <div class="timeline-desc">Person detected near motorcycle</div>
+                        <div class="timeline-cam">Camera 01</div>
+                        <div class="timeline-tag badge-blue">[Person #77]</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-time">04:32:07</div>
+                        <div class="timeline-desc">Motorcycle approaches</div>
+                        <div class="timeline-cam">Camera 01</div>
+                        <div class="timeline-tag badge-purple">[Vehicle #94]</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-time">04:30:18</div>
+                        <div class="timeline-desc">Person-vehicle interaction</div>
+                        <div class="timeline-cam">Camera 01</div>
+                        <div class="timeline-tag badge-orange">[Rule Triggered]</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-time">04:28:46</div>
+                        <div class="timeline-desc">Interaction ends</div>
+                        <div class="timeline-cam">Camera 01</div>
+                        <div class="timeline-tag"></div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-time">04:35:02</div>
+                        <div class="timeline-desc">Motorcycle leaves</div>
+                        <div class="timeline-cam">Camera 01</div>
+                        <div class="timeline-tag"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Video Preview and Related Event Info -->
+            <div class="timeline-sidebar-col">
+
+                <!-- Camera Preview Card -->
+                <div class="card preview-card">
+                    <div class="preview-header">
+                        <span>Camera 01</span>
+                        <span class="rec-indicator"><span class="rec-dot"></span> REC</span>
+                    </div>
+                    <div class="preview-screen">
+                        <div class="bounding-box person-box">
+                            <span class="box-tag">Person #77</span>
+                        </div>
+                        <div class="bounding-box moto-box">
+                            <span class="box-tag">Motorcycle #94</span>
+                        </div>
+                        <div class="preview-timestamp">04:30:18</div>
+                        <div class="preview-cam-label">Camera 01</div>
+                    </div>
+                </div>
+
+                <!-- Related Event Card -->
+                <div class="card related-event-card">
+                    <h3 class="panel-title" style="margin-bottom: 8px;">Related Event</h3>
+                    <div class="related-title">Potentially Suspicious Vehicle Activity</div>
+                    <div class="related-info-row">
+                        <span class="text-muted">04:33:18 - 04:13:46</span>
+                        <span class="badge badge-red">High</span>
+                    </div>
+                    <div class="related-metadata text-secondary">
+                        Person #77 / Motorcycle #94
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="../javascript/layout.js"></script>
+    <script src="../javascript/event.js"></script>
+</body>
+
+</html>
