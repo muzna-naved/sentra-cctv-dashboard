@@ -51,6 +51,5 @@ All data currently displayed is **static mock data** hard-coded into the JavaScr
 
 ## Running Locally
 
-### Option 1 — Open directly
 Open `html/dashboard.html` in any modern browser (Chrome, Edge, Firefox).
 
